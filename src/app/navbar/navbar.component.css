@@ -1,0 +1,51 @@
+.navbar {
+    color: #d3d3d3;
+    background-color: #ffffff; 
+    width: auto;
+}
+
+.navbar-brand {
+    font-size: 1.5rem; 
+}
+
+.navbar-brand img {
+    margin-right: 10px; 
+}
+
+.navbar-nav {
+    justify-content: space-evenly;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 15px; 
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff; 
+    font-weight: bold; 
+    transition: color 0.3s; 
+}
+
+.navbar-nav .nav-link:hover {
+    color: #6ba1e7;  
+}
+
+.form-control {
+    border-radius: 10px; 
+    background-color: #ffffff; 
+    color: #d3d3d3; 
+}
+
+.btn-outline-success {
+    color: rgb(255, 255, 255); 
+    background-color: #637da0; 
+    border-radius: 10px; 
+    transition: background-color 0.3s, color 0.3s;
+    margin-right: 3px; 
+}
+
+.btn-outline-success:hover {
+    background-color: #3c4b58; 
+    color: #ffffff; 
+}
+

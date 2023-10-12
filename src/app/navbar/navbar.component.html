@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(60, 42, 104);">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="home-page">
+            <img width="40" alt="GameFinder Logo"
+                src="https://gamefinder.ae/wp-content/uploads/2020/12/gamefinder-logo.png" class="mr-2" />
+            Game Finder
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerGF"
+            aria-controls="navbarTogglerGF" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerGF">
+            <div class="mx-auto d-flex align-items-center">
+                <ul ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown" ngbDropdown>
+                        <a class="nav-link dropdown-toggle" href="javascript:void(0);" ngbDropdownToggle>
+                            Game Genre
+                        </a>
+                        <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" routerLink="/top-grossing" routerLinkActive="active">
+                                Action
+                            </a>
+                            <a class="dropdown-item" routerLink="/top-grossing" routerLinkActive="active">
+                                Adventure
+                            </a>
+                            <a class="dropdown-item" routerLink="/top-grossing" routerLinkActive="active">
+                                Fantasy
+                            </a>
+                            <a class="dropdown-item" routerLink="/top-grossing" routerLinkActive="active">
+                                RPG
+                            </a>
+                            <a class="dropdown-item" routerLink="/top-grossing" routerLinkActive="active">
+                                Sports
+                            </a>
+                            <a class="dropdown-item" routerLink="/top-grossing" routerLinkActive="active">
+                                Strategy
+                            </a>
+                            <a class="dropdown-item" routerLink="/top-grossing" routerLinkActive="active">
+                                Simulation
+                            </a>
+                            <a class="dropdown-item" routerLink="/top-grossing" routerLinkActive="active">
+                                Other
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/upcoming" routerLinkActive="active">
+                            Upcoming Games
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/top-grossing" routerLinkActive="active">
+                            Top Grossing
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/recently-released" routerLinkActive="active">
+                            Recently Released
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>

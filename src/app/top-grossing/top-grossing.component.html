@@ -1,0 +1,83 @@
+<div>
+  <button (click)="openModal(content)">Add Game</button>
+
+  <!-- The modal -->
+  <ng-template #content let-c="close">
+    <div class="modal-header">
+      <h2 class="modal-title">Add Game</h2>
+      <button type="button" class="close" (click)="closeModal();" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <app-add-game-form (gameAdded)="onGameAdded($event);" (closeModal)="closeModal()"></app-add-game-form>
+    </div>
+  </ng-template>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4" *ngFor="let game of topGames; let i = index">
+        <div class="card">
+          <div class="image-container">
+            <img [src]="game.imageUrl" class="card-img-top" alt="">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ game.name }}</h5>
+            <p class="card-text">{{ game.description }}</p>
+            <p class="card-text">{{ game.genre }}</p>
+            <p class="card-text">{{ game.releasedDate | date }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="logo">
+            <img src="https://gamefinder.ae/wp-content/uploads/2020/12/gamefinder-logo.png" alt="Logo">
+          </div>
+          <p>Game Finder: Your portal to upcoming games, top <br> sellers, and discussions with fellow gamers.</p>
+          <p>Stay connected via social media and reach out for assistance. Game on!</p>
+        </div>
+
+        <div class="col-md-2">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a routerLink="/home-page">Home</a></li>
+            <li><a routerLink="/upcoming">Upcoming Games</a></li>
+            <li><a routerLink="/top-grossing">Top Grossing</a></li>
+            <li><a routerLink="/recently-released">Recently Released</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2">
+          <h4>Follow Us</h4>
+          <ul class="social-media">
+            <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="#">Issues</a></li>
+            <li><a href="#">Discussion</a></li>
+            <li><a href="#">Sponsors</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2">
+          <h4>Contact Us</h4>
+          <address>
+            <p>123 Street Name<br>City, Country<br>Email: info@example.com<br>Phone: +123456789</p>
+          </address>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

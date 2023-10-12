@@ -1,0 +1,41 @@
+<form (ngSubmit)="addGame()">
+  <mat-form-field class="form-field" [class.error]="gameIdError">
+    <label for="gameId">Game ID:</label>
+    <input matInput type="number" id="gameId" name="gameId" [(ngModel)]="game.gameId" required>
+    <div *ngIf="gameIdError" class="error-message">Game ID is required.</div>
+  </mat-form-field>
+
+  <mat-form-field class="form-field">
+    <label for="name">Game Name:</label>
+    <input matInput type="text" id="name" name="name" [(ngModel)]="game.name" required>
+    <div *ngIf="nameError" class="error-message">Game name can't be empty.</div>
+  </mat-form-field>
+
+  <mat-form-field class="form-field">
+    <label for="description">Game Description:</label>
+    <input matInput type="text" id="description" name="description" [(ngModel)]="game.description" required>
+    <div *ngIf="descriptionError" class="error-message">Game description can't be empty.</div>
+  </mat-form-field>
+
+  <mat-form-field class="form-field">
+    <label for="genre">Game Genre:</label>
+    <input matInput type="text" id="genre" name="genre" [(ngModel)]="game.genre" required>
+    <div *ngIf="genreError" class="error-message">Game genre can't be empty.</div>
+  </mat-form-field>
+
+  <mat-form-field class="form-field">
+    <label for="image">Game Image:</label>
+    <input matInput type="url" id="image" name="image" [(ngModel)]="game.imageUrl" required>
+    <div *ngIf="imageError" class="error-message">Image field can't be empty.</div>
+  </mat-form-field>
+
+  <div class="custom-input">
+    <label for="releasedDate">Released Date:</label>
+    <input type="date" id="releasedDate" name="releasedDate" [(ngModel)]="game.releasedDate" required>
+    <div *ngIf="releasedDateError" class="error-message">Released Date is required.</div>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Add</button>
+</form>
+
+  
