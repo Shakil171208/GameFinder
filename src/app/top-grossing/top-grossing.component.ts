@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { topGame, AddGameService } from '../add-game.service';
+import { EditGameService } from '../edit-game.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { EditGameComponent } from '../edit-game/edit-game.component';
 
 @Component({
   selector: 'app-top-grossing',
@@ -12,7 +14,11 @@ export class TopGrossingComponent implements OnInit{
   topGames: topGame[] = [];
   private modalRef!: NgbModalRef;
 
-  constructor(private addGameService: AddGameService, private modalService: NgbModal) {}
+  constructor(
+    private addGameService: AddGameService,
+    private modalService: NgbModal,
+    private editGameService: EditGameService
+  ) {}
   
   ngOnInit() {
     this.fetchTopGames();
@@ -39,4 +45,14 @@ export class TopGrossingComponent implements OnInit{
       this.topGames = data;
     });
   }
+
+  openEditModal(game: topGame) {
+    this.modalRef = this.modalService.open(EditGameComponent);
+    this.modalRef.componentInstance.game = { ...game };
+    this.modalRef.componentInstance.gameEdited.subscribe((game: topGame) => {
+      const index = this.topGames.findIndex((g) => g.gameId === game.gameId);
+      if (index !== -1) {
+        this.topGames[index] = game;
+      }
+    });}
 }

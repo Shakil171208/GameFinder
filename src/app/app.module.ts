@@ -27,6 +27,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { MatDialogModule } from '@angular/material/dialog';
+import { EditGameComponent } from './edit-game/edit-game.component';
 
 library.add(fas);
 
@@ -40,6 +41,7 @@ library.add(fas);
     RecentlyReleasedComponent,
     HomePageComponent,
     AddGameFormComponent,
+    EditGameComponent,
   ],
   imports: [
     BrowserModule,

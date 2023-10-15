@@ -13,7 +13,7 @@
       <app-add-game-form (gameAdded)="onGameAdded($event);" (closeModal)="closeModal()"></app-add-game-form>
     </div>
   </ng-template>
-
+  
   <div class="container">
     <div class="row">
       <div class="col-sm-4" *ngFor="let game of topGames; let i = index">
@@ -27,6 +27,7 @@
             <p class="card-text">{{ game.genre }}</p>
             <p class="card-text">{{ game.releasedDate | date }}</p>
           </div>
+          <button class="btn btn-primary" (click)="openEditModal(game)">Edit</button>
         </div>
       </div>
     </div>

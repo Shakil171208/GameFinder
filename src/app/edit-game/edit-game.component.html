@@ -1,0 +1,40 @@
+<div class="modal-content">
+    <h2>Edit Game</h2>
+    <button type="button" class="close" (click)="activeModal.close();" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    <form (ngSubmit)="editGame()">
+      <mat-form-field class="form-field">
+        <label for="gameId">Game ID:</label>
+        <input matInput type="number" id="gameId" name="gameId" [(ngModel)]="game.gameId" disabled>
+      </mat-form-field>
+  
+      <mat-form-field class="form-field">
+        <label for="name">Game Name:</label>
+        <input matInput type="text" id="name" name="name" [(ngModel)]="game.name" required>
+      </mat-form-field>
+  
+      <mat-form-field class="form-field">
+        <label for="description">Game Description:</label>
+        <input matInput type="text" id="description" name="description" [(ngModel)]="game.description" required>
+      </mat-form-field>
+  
+      <mat-form-field class="form-field">
+        <label for="genre">Game Genre:</label>
+        <input matInput type="text" id="genre" name="genre" [(ngModel)]="game.genre" required>
+      </mat-form-field>
+  
+      <mat-form-field class="form-field">
+        <label for="image">Game Image:</label>
+        <input matInput type="url" id="image" name="image" [(ngModel)]="game.imageUrl" required>
+      </mat-form-field>
+  
+      <div class="custom-input">
+        <label for="releasedDate">Released Date:</label>
+        <input type="date" id="releasedDate" name="releasedDate" [(ngModel)]="game.releasedDate" required>
+      </div>
+    
+      <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+  </div>
+  

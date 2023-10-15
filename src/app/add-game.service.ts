@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class AddGameService {
   private addGameUrl = 'http://localhost:5260/api/topgames';
   private getTopGamesUrl = 'http://localhost:5260/api/topgames';
+  updateGame: any;
 
   constructor(private http: HttpClient) {}
   
