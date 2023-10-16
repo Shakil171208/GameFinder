@@ -1,8 +1,10 @@
-<div class="modal-content">
-    <h2>Edit Game</h2>
-    <button type="button" class="close" (click)="activeModal.close();" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
+<div class="modal-header">
+  <h2 class="modal-title">Edit Game</h2>
+  <button type="button" class="close" (click)="closeModal();" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
     <form (ngSubmit)="editGame()">
       <mat-form-field class="form-field">
         <label for="gameId">Game ID:</label>
@@ -33,7 +35,7 @@
         <label for="releasedDate">Released Date:</label>
         <input type="date" id="releasedDate" name="releasedDate" [(ngModel)]="game.releasedDate" required>
       </div>
-    
+
       <button type="submit" class="btn btn-primary">Save</button>
     </form>
   </div>

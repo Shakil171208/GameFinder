@@ -13,10 +13,10 @@ export class EditGameComponent {
   @Input()
   game!: topGame;
   @Output() gameEdited = new EventEmitter<topGame>();
-  @Output() closeModal = new EventEmitter();
+  // @Output() closeModal = new EventEmitter();
 
   constructor(public activeModal: NgbActiveModal, private addGameService: AddGameService, private editGameService: EditGameService, private router: Router) {}
-
+  
   
   editGame() {
     this.editGameService.editGame(this.game).subscribe((editedGame) => {
@@ -24,6 +24,10 @@ export class EditGameComponent {
       this.gameEdited.emit(editedGame);
       this.activeModal.close();
     });
+  }
+
+  closeModal() {
+    this.activeModal.close();
   }
 }
 

@@ -1,5 +1,7 @@
 <div>
-  <button (click)="openModal(content)">Add Game</button>
+  <div class="add-button">
+    <button (click)="openModal(content)">Add Game</button>
+  </div>  
 
   <!-- The modal -->
   <ng-template #content let-c="close">
@@ -27,7 +29,14 @@
             <p class="card-text">{{ game.genre }}</p>
             <p class="card-text">{{ game.releasedDate | date }}</p>
           </div>
-          <button class="btn btn-primary" (click)="openEditModal(game)">Edit</button>
+          <div class="card-actions">
+            <button class="btn btn-primary" (click)="openEditModal(game)">
+              <i class="fas fa-edit"></i> Edit
+            </button>
+            <button class="btn btn-danger" (click)="openDeleteModal(game)">
+              <i class="fas fa-trash"></i> Delete
+            </button>
+          </div>
         </div>
       </div>
     </div>
